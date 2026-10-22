@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: daypilot
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/daypilot}
+    username: ${SPRING_DATASOURCE_USERNAME:daypilot}
+    password: ${SPRING_DATASOURCE_PASSWORD:daypilot}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  ai:
+    mcp:
+      server:
+        name: daypilot-mcp
+        version: 0.0.1
+        type: SYNC
+        instructions: "DayPilot task and planning tools. Only complete tasks when the user explicitly requests it."
